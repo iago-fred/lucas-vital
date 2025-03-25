@@ -24,7 +24,7 @@ const Fundo = styled.section`
 
 function SecaoPrincipal(){
     return(
-        <Fundo onLoad={e => window.scrollTo(e.target.getBoundingClientRect())}>
+        <Fundo>
             <LogoCompleto />
         </Fundo>
     )

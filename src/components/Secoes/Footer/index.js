@@ -52,7 +52,7 @@ function Footer () {
                 <div>
                     <h4>Sumário</h4>
                     {variaveis.secoes.map(secao => 
-                        <a href="#">{secao}</a>
+                        <a href={`#secao${(variaveis.secoes.indexOf(secao)) + 1}`}>{secao}</a>
                     )}
                 </div>
                 <div>

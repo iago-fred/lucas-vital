@@ -27,7 +27,7 @@ function NavBar () {
             <Lista>
                 {variaveis.secoes.map(secao => 
                 <li>
-                    <Link key={secao} href="#">{secao}</Link>
+                    <Link key={secao} href={`#secao${(variaveis.secoes.indexOf(secao)) + 1}`}>{secao}</Link>
                 </li>)}
             </Lista>
         </nav>
