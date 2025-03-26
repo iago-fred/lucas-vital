@@ -2,6 +2,7 @@ import styled from "styled-components"
 import variaveis from "../../../variaveis"
 import TitulosSecoes from "../../TitulosSecoes"
 import CardContatos from "../../CardContatos"
+import { useState } from "react";
 
 const Fundo = styled.section`
     background-color: ${variaveis.cinza};
@@ -20,15 +21,17 @@ const CardsContainer = styled.div`
     margin-bottom: 110px;
 `
 
-function FaleConosco () {
+
+function FaleConosco ({setRef}) {
+
     return (
-        <Fundo>
-            <TitulosSecoes
-                titulo="Fale conosco"
-                subtitulo="Precisa de orientação jurídica ou deseja agendar uma consulta?<br/>Nossa equipe está disponível para esclarecer dúvidas e oferecer soluções personalizadas para seu caso.<br/><span>Para entrar em contato, estes são nossos canais:</span>"
-                position="left"
-                fundo="cinza"
-            />
+        <Fundo ref={setRef}>
+                <TitulosSecoes
+                    titulo="Fale conosco"
+                    subtitulo="Precisa de orientação jurídica ou deseja agendar uma consulta?<br/>Nossa equipe está disponível para esclarecer dúvidas e oferecer soluções personalizadas para seu caso.<br/><span>Para entrar em contato, estes são nossos canais:</span>"
+                    position="left"
+                    fundo="cinza"
+                />
             <CardsContainer>
                 {variaveis.links.map(elemento =>
                     <CardContatos 

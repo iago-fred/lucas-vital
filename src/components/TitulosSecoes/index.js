@@ -9,6 +9,8 @@ function TitulosSecoes (props) {
     height: 110px;
     width: 100%;
     margin: 110px 0;
+    transform-origin: ${props.position};
+    transition: all 1s ease;
 
         div{
             display: flex;

@@ -29,6 +29,7 @@ const SectionFooter = styled.div`
 
         &:hover{
             text-decoration: underline;
+            cursor: pointer;
             color: ${variaveis.branco};
         }
     }
@@ -43,7 +44,7 @@ const Dev = styled.div`
         color: ${variaveis.cinza}
 `
 
-function Footer () {
+function Footer ({refs}) {
     
     return (
         <footer>
@@ -52,7 +53,9 @@ function Footer () {
                 <div>
                     <h4>Sumário</h4>
                     {variaveis.secoes.map(secao => 
-                        <a href={`#secao${(variaveis.secoes.indexOf(secao)) + 1}`}>{secao}</a>
+                        <a
+                            onClick={() => refs[variaveis.secoes.indexOf(secao)].scrollIntoView({behavior: "smooth"})}
+                        >{secao}</a>
                     )}
                 </div>
                 <div>

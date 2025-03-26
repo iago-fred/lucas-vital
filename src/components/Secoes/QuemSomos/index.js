@@ -37,9 +37,9 @@ const Imag = styled.div`
         
     `
 
-function QuemSomos () {
+function QuemSomos ({setRef}) {
     return (
-        <Fundo>
+        <Fundo ref={setRef}>
             <TitulosSecoes
                 titulo="Quem Somos"
                 subtitulo="Somos um escritório de advocacia comprometido com a excelência jurídica, oferecendo serviços personalizados com ética e profissionalismo. <br/><span>Conheça mais sobre nós a seguir:</span>"

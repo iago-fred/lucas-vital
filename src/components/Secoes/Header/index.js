@@ -18,11 +18,11 @@ const SectioHeader = styled.header`
 
 console.log(variaveis.azul)
 
-function Header () {
+function Header ({refs}) {
     return (
         <SectioHeader>
             <Logomarca size="3em" margin="84px"/>
-            <NavBar/>
+            <NavBar refs={refs}/>
         </SectioHeader>
     )
 }

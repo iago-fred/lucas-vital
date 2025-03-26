@@ -22,16 +22,12 @@ const Fundo = styled.section`
     
 `
 
-function SecaoPrincipal(){
+function SecaoPrincipal({setRef, ref}){
     return(
-        <Fundo>
+        <Fundo ref={setRef}>
             <LogoCompleto />
         </Fundo>
     )
 }
 
 export default SecaoPrincipal;
-
-function logoEmFoco(){
-
-}

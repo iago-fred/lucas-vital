@@ -20,10 +20,15 @@ const CardsContainer = styled.div`
   margin-bottom: 110px;
 `
 
-function Atuacao () {
+function Atuacao ({setRef, ref}) {
     return (
-    <Fundo>
-      <TitulosSecoes position={"left"} titulo={"Áreas de atuação"} subtitulo={"O Direito é um campo vasto e diversificado, dividido em diversas áreas de atuação, cada uma com suas particularidades e especialidades. Nosso escritório atua nas principais delas, oferecendo soluções jurídicas eficientes e personalizadas. <br/><span>Conheça abaixo nossas especialidades:</span>"}/>
+    <Fundo ref={setRef}>
+      <TitulosSecoes
+        position={"left"}
+        titulo={"Áreas de atuação"}
+        subtitulo={"O Direito é um campo vasto e diversificado, dividido em diversas áreas de atuação, cada uma com suas particularidades e especialidades. Nosso escritório atua nas principais delas, oferecendo soluções jurídicas eficientes e personalizadas. <br/><span>Conheça abaixo nossas especialidades:</span>"}
+        ref={ref}
+      />
       <CardsContainer>
         {variaveis.atuacoes.map(e =>
           <CardAtuacao titulo={e}/>
