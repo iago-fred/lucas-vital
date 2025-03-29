@@ -9,6 +9,10 @@ const Lista = styled.ul`
     text-align: center;
     align-items: center;
     margin: 0 84px;
+    
+    @media (max-width: 950px){
+        display: none;
+    }
 `
 
 const Link = styled.a`
@@ -28,13 +32,14 @@ function NavBar ({refs}) {
     return (
         <nav>
             <Lista>
-                {variaveis.secoes.map(secao => 
-                <li>
-                    <Link
-                        key={secao}
-                        onClick={() => refs[variaveis.secoes.indexOf(secao)].scrollIntoView({behavior: "smooth"})}
-                    >{secao}</Link>
-                </li>)}
+                {variaveis.secoes.map(secao =>
+                    <li 
+                    key={secao}>
+                        <Link
+                            onClick={() => refs[variaveis.secoes.indexOf(secao)].scrollIntoView({behavior: "smooth"})}
+                        >{secao}</Link>
+                    </li>)
+                }
             </Lista>
         </nav>
     )

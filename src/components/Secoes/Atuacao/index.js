@@ -2,6 +2,8 @@ import styled from "styled-components";
 import TitulosSecoes from "../../TitulosSecoes";
 import variaveis from "../../../variaveis";
 import CardAtuacao from "../../CardAtuacao";
+import Slider from '../../Slider';
+import { useState } from "react";
 
 const Fundo = styled.section`
   background-color: ${variaveis.cinza};
@@ -20,22 +22,32 @@ const CardsContainer = styled.div`
   margin-bottom: 110px;
 `
 
-function Atuacao ({setRef, ref}) {
-    return (
+function Atuacao({ setRef }) {
+  const [tela, setTela] = useState(window.innerWidth)
+
+  window.addEventListener("resize", () => setTela(window.innerWidth))
+
+  return (
     <Fundo ref={setRef}>
       <TitulosSecoes
         position={"left"}
         titulo={"Áreas de atuação"}
         subtitulo={"O Direito é um campo vasto e diversificado, dividido em diversas áreas de atuação, cada uma com suas particularidades e especialidades. Nosso escritório atua nas principais delas, oferecendo soluções jurídicas eficientes e personalizadas. <br/><span>Conheça abaixo nossas especialidades:</span>"}
-        ref={ref}
       />
-      <CardsContainer>
-        {variaveis.atuacoes.map(e =>
-          <CardAtuacao titulo={e}/>
-        )}
-      </CardsContainer>
+
+      {tela >= 810 ?
+        <CardsContainer>
+          {variaveis.atuacoes.map(e =>
+            <CardAtuacao titulo={e}
+              key={e + "-card-atuacoes"}
+            />
+          )}
+        </CardsContainer> :
+        <Slider/>
+      }
     </Fundo>
-    )
+
+  )
 }
 
 export default Atuacao;

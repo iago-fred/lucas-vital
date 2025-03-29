@@ -2,7 +2,6 @@ import styled from "styled-components"
 import variaveis from "../../../variaveis"
 import TitulosSecoes from "../../TitulosSecoes"
 import CardContatos from "../../CardContatos"
-import { useState } from "react";
 
 const Fundo = styled.section`
     background-color: ${variaveis.cinza};
@@ -19,6 +18,12 @@ const CardsContainer = styled.div`
     align-items: top;
     justify-content: center;
     margin-bottom: 110px;
+
+    @media (max-width: 810px) {
+        gap:30px;
+        padding: 5px;
+        margin-bottom: 54px;
+    }
 `
 
 
@@ -35,6 +40,7 @@ function FaleConosco ({setRef}) {
             <CardsContainer>
                 {variaveis.links.map(elemento =>
                     <CardContatos 
+                        key={`${elemento}-fale-conosco`}
                         titulo={elemento[0]}
                         texto={elemento[1]}
                         link={elemento[2]}

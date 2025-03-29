@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 
-function Logomarca (props){
+function Logomarca ({size, margin, cor=true}){
     const Logo = styled.img`
-        height: ${props.size};
-        margin: ${props.margin};
+        height: ${size};
+        margin: ${margin};
     `
+    const imagem = cor===true? "../../assets/logo.svg": "../../assets/logo-branco.svg"
     return(
-        <Logo src="../../assets/logo.svg"/>
+
+        <Logo src={imagem}/>
     )
     
 }

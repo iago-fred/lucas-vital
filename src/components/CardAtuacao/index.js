@@ -21,11 +21,18 @@ const Icone = styled.div`
     border-radius: 50%;
     padding: 10px;
     top: 27px;
+    display: flex; 
+    text-align: center;
+    justify-content: center;
     right: 50%;
     transform: translate(50%, 0);
 
     img {
         width: 54px;
+
+        @media (max-width: 810px){
+            width: 40px;
+        }
     }
 `
 
@@ -37,6 +44,10 @@ const ParteBranca = styled.div`
     h2 {
         color: ${variaveis.azulEscuro};
         font-weight: 700;
+
+        @media (max-width: 810px){
+            font-size: 1.4em;
+        }
     }
     
     ol{
@@ -46,6 +57,10 @@ const ParteBranca = styled.div`
         gap: 1em;
         font-size: 18px;
         font-weight: 400;
+        
+        @media (max-width: 810px){
+            font-size: 1em;
+        }
     }
 `
 
@@ -65,7 +80,7 @@ function CardAtuacao (props) {
                 <h2>{props.titulo}</h2>
                 <ol>
                     {variaveis[controleLista].map(e =>
-                        <li>{e}.</li>
+                        <li key={`${e}-lista-atuacoes-${props.titulo}`}>{e}.</li>
                     )}
                 </ol>
             </ParteBranca>

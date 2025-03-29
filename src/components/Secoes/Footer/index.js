@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import variaveis from "../../../variaveis"
 import Logomarca from "../../Logomarca"
+import { useState } from "react"
 
 const SectionFooter = styled.div`
     background-color: ${variaveis.azul};
@@ -45,15 +46,19 @@ const Dev = styled.div`
 `
 
 function Footer ({refs}) {
-    
+
+    const [tela, setTela] = useState(window.innerWidth);
+
+    window.addEventListener("resize", () => setTela(window.innerWidth))
+
     return (
         <footer>
             <SectionFooter>
-                <Logomarca/>
+                <Logomarca size={window.innerWidth <= 810? "40px":"50px"} cor={false}/>
                 <div>
                     <h4>Sumário</h4>
                     {variaveis.secoes.map(secao => 
-                        <a
+                        <a key={`${secao}-footer`}
                             onClick={() => refs[variaveis.secoes.indexOf(secao)].scrollIntoView({behavior: "smooth"})}
                         >{secao}</a>
                     )}
@@ -61,7 +66,7 @@ function Footer ({refs}) {
                 <div>
                     <h4>Links</h4>
                     {variaveis.links.map(link => 
-                        <a href={link[2]}>{link[0]}</a>
+                        <a key={`${link}-footer`} href={link[2]}>{link[0]}</a>
                     )}
                 </div>
             </SectionFooter>
