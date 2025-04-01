@@ -49,7 +49,7 @@ function TitulosSecoes (props) {
         p{
             margin: 1em 1em;
             width: 520px;
-            text-align: ${props.position};
+            text-align: justify;
             font-weight: 500;
             color: ${props.fundo == "azul"? variaveis.cinza : variaveis.azul};
 

@@ -46,7 +46,7 @@ const ContainerTexto = styled.div`
             display: flex;
             flex-direction: column;
             box-sizing: border-box;
-            text-align: center;
+            text-align: justify;
             justify-content: space-evenly;
 
             @media (max-width: 1300px){
