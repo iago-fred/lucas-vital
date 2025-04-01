@@ -12,7 +12,7 @@ const variaveis = {
     links: [
         ["Whatsapp", "(71) 9 9244-4691", "https://wa.me/5571992444691", "whatsapp-logo.svg"],
         ["Instagram", "@lucasrvital.adv", "https://www.instagram.com/lucasrvital.adv/", "instagram-logo.svg"],
-        ["E-mail", "lucasrvital.adv@gamil.com", "lucasrvital.adv@gamil.com", "envelope.svg"],
+        ["E-mail", "lucasrvital.adv@gamil.com", "mailto:lucasrvital.adv@gamil.com", "envelope.svg"],
         ["Localização", "Internacional Trade Center, Stiep, Slavador-BA", "https://www.google.com/maps/place/Lucas+R.+Vital+Advogados+Associados/@-12.9871029,-38.4487188,17z/data=!3m1!4b1!4m6!3m5!1s0x4126d34ebd1e6791:0x84d4b1e5af4bab8a!8m2!3d-12.9871029!4d-38.4487188!16s%2Fg%2F11sqkhlqbt?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D", "map-pin.svg"],
     ],
 

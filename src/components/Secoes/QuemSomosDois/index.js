@@ -46,7 +46,6 @@ const ContainerTexto = styled.div`
             display: flex;
             flex-direction: column;
             box-sizing: border-box;
-            text-align: center;
             justify-content: space-evenly;
 
             @media (max-width: 1300px){
@@ -67,9 +66,9 @@ const ContainerTexto = styled.div`
     `
 
 
-function QuemSomos({ setRef, ref }) {
+function QuemSomosDois({ }) {
     return (
-        <Fundo ref={setRef}>
+        <Fundo>
             <TitulosSecoes
                 titulo="Quem Somos"
                 subtitulo="Somos um escritório de advocacia comprometido com a excelência jurídica, oferecendo serviços personalizados com ética e profissionalismo. <br/><span>Conheça mais sobre nós a seguir:</span>"
@@ -91,4 +90,4 @@ function QuemSomos({ setRef, ref }) {
     )
 }
 
-export default QuemSomos
+export default QuemSomosDois
