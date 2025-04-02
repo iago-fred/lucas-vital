@@ -15,7 +15,7 @@ const Imag = styled.div`
         background-image: url("../../assets/foto.png");
         background-repeat: no-repeat;
         background-size: 500px;
-        background-position: 15vw -45px;
+        background-position: 15vw -95px;
         height: 700px;
         width: 100%;
         display: flex;
@@ -26,9 +26,8 @@ const Imag = styled.div`
         text-align: left;
 
         @media (max-width: 1300px){
-            background-position: 50% -45px;
+            background-position: 50% -95px;
             opacity: .15;
-            background-size: 500px;
         }
     `
 const ContainerTexto = styled.div`

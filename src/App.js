@@ -42,7 +42,6 @@ function App() {
         <SecaoPrincipal setRef={setSecaoPrincipalRef} />
         <Atuacao setRef={setAtuacaoRef} />
         <QuemSomos setRef={setQuemSomosRef} />
-        <QuemSomosDois />
         <FaleConosco setRef={setFaleConoscoRef} />
       </main>
       <Footer refs={listaDeSecoes} />
