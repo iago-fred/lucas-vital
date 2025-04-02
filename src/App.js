@@ -4,7 +4,6 @@ import variaveis from "./variaveis";
 import SecaoPrincipal from "./components/Secoes/SecaoPrincipal";
 import Atuacao from "./components/Secoes/Atuacao";
 import QuemSomos from "./components/Secoes/QuemSomos";
-import QuemSomos2 from "./components/Secoes/QuemSomos2";
 import FaleConosco from "./components/Secoes/FaleConosco";
 import Footer from "./components/Secoes/Footer";
 import { useRef, useState } from 'react';
@@ -42,7 +41,6 @@ function App() {
         <SecaoPrincipal setRef={setSecaoPrincipalRef} />
         <Atuacao setRef={setAtuacaoRef} />
         <QuemSomos setRef={setQuemSomosRef} />
-        <QuemSomos2  />
         <FaleConosco setRef={setFaleConoscoRef} />
       </main>
       <Footer refs={listaDeSecoes} />

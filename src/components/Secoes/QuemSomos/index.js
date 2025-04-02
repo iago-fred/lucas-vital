@@ -14,8 +14,8 @@ const Fundo = styled.section`
 const Imag = styled.div`
         background-image: url("../../assets/foto.png");
         background-repeat: no-repeat;
-        background-size: 500px;
-        background-position: 15vw -95px;
+        background-size: 525px;
+        background-position: 15vw 0px;
         height: 700px;
         width: 100%;
         display: flex;
@@ -26,7 +26,7 @@ const Imag = styled.div`
         text-align: left;
 
         @media (max-width: 1300px){
-            background-position: 50% -95px;
+            background-position: 50% 0px;
             opacity: .2;
         }
     `
