@@ -27,7 +27,7 @@ const variaveis = {
 
     consumidor: [
         "Revisionais de planos de saúde",
-        "Nagativação indevida",
+        "Negativação indevida",
         "Problemas com companhias aéreas",
         "Problemas com instituições de ensino",
         "Problemas com instituições financeiras",
