@@ -27,7 +27,7 @@ const Imag = styled.div`
 
         @media (max-width: 1300px){
             background-position: 50% -95px;
-            opacity: .15;
+            opacity: .2;
         }
     `
 const ContainerTexto = styled.div`
