@@ -19,7 +19,7 @@ const variaveis = {
     civil: [
         "Ações de cobrança e execuções",
         "Elaborações e revisões de contratos",
-        "Direito de vizinhança e dondominial",
+        "Direito de vizinhança e condominial",
         "Ações relacionadas ao direito das famílias",
         "Ações de indenização por dano moral e material",
         "Pareceres verbais e escritos"
