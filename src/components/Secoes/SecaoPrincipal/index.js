@@ -22,7 +22,7 @@ const Fundo = styled.section`
     
 `
 
-function SecaoPrincipal({setRef, ref}){
+function SecaoPrincipal({setRef}){
     return(
         <Fundo ref={setRef}>
             <LogoCompleto />

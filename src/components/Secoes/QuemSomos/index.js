@@ -1,61 +1,50 @@
 import styled from "styled-components"
 import TitulosSecoes from "../../TitulosSecoes"
 import variaveis from "../../../variaveis"
+import { useState } from "react"
 
 const Fundo = styled.section`
     background-image: linear-gradient(180deg, ${variaveis.azul} 10%, ${variaveis.azulEscuro});
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
     position: relative;
+    height: 1200px;
     margin: 0;
 `
 
-const Imag = styled.div`
-        background-image: url("../../assets/foto.png");
-        background-repeat: no-repeat;
-        background-size: 525px;
-        background-position: 15vw 0px;
-        height: 700px;
-        width: 100%;
+const Imag = styled.img`
+        height: 800px;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
-        gap: 1em;
-        text-align: left;
+        position: absolute;
+        bottom: -20px;
+        right: 53vw;
 
         @media (max-width: 1300px){
-            background-position: 50% 0px;
             opacity: .2;
+            left: 50%;
+            transform: translate(-50%, 0%);
         }
     `
-const ContainerTexto = styled.div`
+const Infos = styled.div`
             color: ${variaveis.cinza};
             display: flex;
             flex-direction: column;
-            align-items: end;
+            align-items: start;
             position: absolute;
             top: 300px;
-            left: 54px;
-            right: 54px;
+            width: 45vw;
+            right: 80px;
 
-        div{
-            width: 45%;
-            display: flex;
-            flex-direction: column;
-            box-sizing: border-box;
-            text-align: justify;
-            justify-content: space-evenly;
+        @media (max-width: 1300px){
+            width: 90%;
+            right: 50%;
+            transform: translate(50%, 0%);
+        }
 
-            @media (max-width: 1300px){
-                width: 100%;
-            }
-
-            @media (max-width: 810px){
-                font-size: .85em;
-                line-height: 1.2em;
-            }
+        @media (max-width: 810px){
+            align-items: center;
         }
         
 
@@ -65,8 +54,42 @@ const ContainerTexto = styled.div`
         }
     `
 
+    const ContainerTexto = styled.div`
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        text-align: justify;
+        justify-content: space-evenly;
 
-function QuemSomos({ setRef, ref }) {
+        @media (max-width: 810px){
+            font-size: .85em;
+            line-height: 1.2em;
+        }
+    `
+    
+    const Premiacao = styled.img`
+        width: 250px;
+        margin: 24px 0 0 0;
+
+        @media (max-width: 810px) {
+            width: 100px;
+        }
+    `
+
+    const ContainerPremiacao = styled.div`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    `
+
+
+function QuemSomos({ setRef}) {
+    const [tela, setTela] = useState(window.innerWidth)
+    
+    window.addEventListener("resize", () => setTela(window.innerWidth))
+    
+    const imagemPremiacao = tela >= 810? "../../assets/ancec-rectang.png":"../../assets/ancec-square.png"
+
     return (
         <Fundo ref={setRef}>
             <TitulosSecoes
@@ -75,17 +98,21 @@ function QuemSomos({ setRef, ref }) {
                 position="right"
                 fundo="azul"
             />
-            <Imag />
-            <ContainerTexto>
-                <div>
+            <Imag src="../../assets/foto.png"/>
+            <Infos>
+                <ContainerTexto>
                     <h2>Sobre nós</h2>
                     <p>Fundado em 2018 pelo advogado <span>Lucas R. Vital</span>, com o propósito de oferecer uma advocacia moderna, estratégica e humanizada, <span>nosso escritório se destaca pela excelência técnica e pelo compromisso genuíno com os interesses de nossos clientes</span>. Com uma equipe formada por profissionais especializados, combinamos conhecimento jurídico aprofundado com uma visão prática e inovadora das demandas do Direito contemporâneo.</p>
                     <h2>Nossa filosofia</h2>
                     <p>Buscamos exercer a advocacia com eficiência e objetividade, combinando conhecimento jurídico sólido com uma abordagem prática e direta. <br /><span>Valorizamos a clareza na comunicação e a transparência nos processos</span>. Nosso objetivo é oferecer soluções jurídicas adequadas a cada caso, sempre pautadas pela <span>ética profissional e pelo compromisso com os interesses de nossos clientes</span>.</p>
                     <h2>Compromisso com o cliente</h2>
                     <p>Mais do que prestar serviços jurídicos, construímos relações de longo prazo baseadas na <span>confiança mútua</span>. Nossa equipe está sempre disponível para orientar, esclarecer dúvidas e buscar as melhores alternativas para cada situação.</p>
-                </div>
-            </ContainerTexto>
+                </ContainerTexto>
+                <ContainerPremiacao>
+                    <Premiacao src={imagemPremiacao} alt="Selo da premiação ancec pelo desempenho na área de atuação no ano de 2024"/>
+                    <p>Categoria Ouro ANCEC</p>
+                </ContainerPremiacao>
+            </Infos>
         </Fundo>
     )
 }
