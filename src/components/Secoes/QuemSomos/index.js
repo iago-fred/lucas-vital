@@ -69,7 +69,7 @@ const Infos = styled.div`
     
     const Premiacao = styled.img`
         width: 250px;
-        margin: 24px 0 0 0;
+        margin: 24px 0 12px 0;
 
         @media (max-width: 810px) {
             width: 100px;
@@ -80,6 +80,12 @@ const Infos = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
+        line-height: 1.5em;
+
+        p{
+            margin: 0;
+        }
+        
     `
 
 
@@ -111,6 +117,7 @@ function QuemSomos({ setRef}) {
                 <ContainerPremiacao>
                     <Premiacao src={imagemPremiacao} alt="Selo da premiação ancec pelo desempenho na área de atuação no ano de 2024"/>
                     <p>Categoria Ouro ANCEC</p>
+                    <p><span>Referência Nacional na advocacia</span></p>
                 </ContainerPremiacao>
             </Infos>
         </Fundo>
